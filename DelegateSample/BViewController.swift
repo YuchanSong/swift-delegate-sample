@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol CustomDelegate {
+protocol CustomDelegate: AnyObject {
     func returnValue(vc: BViewController, text: String?)
 }
 
 class BViewController: UIViewController {
     
     @IBOutlet weak var tf: UITextField!
-    var delegate: CustomDelegate!
+    weak var delegate: CustomDelegate!
     
     @IBAction func click(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
