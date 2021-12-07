@@ -25,7 +25,8 @@ class AViewController: UIViewController {
 
 extension AViewController: CustomDelegate {
     func returnValue(vc: BViewController, text: String?) {
-        vc.dismiss(animated: false, completion: {
+        vc.dismiss(animated: false, completion: { [weak self] in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 self.tf.text = text
             }
