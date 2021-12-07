@@ -18,7 +18,7 @@ class BViewController: UIViewController {
     
     @IBAction func click(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        self.delegate.returnValue(vc: self, text: tf.text)
+        self.delegate?.returnValue(vc: self, text: tf.text)
     }
     
     override func viewDidLoad() {
