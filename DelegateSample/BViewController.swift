@@ -14,7 +14,7 @@ protocol CustomDelegate: AnyObject {
 class BViewController: UIViewController {
     
     @IBOutlet weak var tf: UITextField!
-    weak var delegate: CustomDelegate!
+    weak var delegate: CustomDelegate?
     
     @IBAction func click(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
